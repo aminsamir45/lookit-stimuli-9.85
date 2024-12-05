@@ -4,41 +4,6 @@
             "kind": "exp-video-config",
             "troubleshootingIntro": "If you're having any trouble getting your webcam set up, please feel free to email Kami at kamgar10@mit.edu and we'd be glad to help you out!"
         },
-        "survey-consent": {
-            "kind": "exp-lookit-survey-consent",
-            "title": "Consent for a Child’s Participation in a Study for Educational Purposes Only \n The Influence of Structured Cues on Creative Problem-Solving in Young Children",
-            "items": [
-                {
-                    "kind": "text-block",
-                    "text": "Dear Parents/Guardians, We're writing to invite you and your child (ages 6-8) to participate in the study Guided Frameworks in Creative Problem-Solving ! This study is run through our partner Children Helping Science. We’re Samir and Alay, computational cognitive science researchers at MIT, working with Professor Laura Schulz’s 9.85 Infant and Early Childhood Cognition class. Through this study, we aim to explore how different types of exercises can help young children learn and express themselves more effectively."
-                },
-                {
-                    "kind": "text-block",
-                    "text": "Your child will participate in an online session lasting approximately 15-20 minutes. During this session, they will be shown everyday objects and asked to think of new ways to use them. For children in the verbal learning group, brief explanations of each object’s typical use will be provided. The session will be video recorded to evaluate responses based on creativity measures such as originality, flexibility, and elaboration."
-                },
-                {
-                    "kind": "text-block",
-                    "text": "There are no foreseeable risks associated with this study beyond those encountered in everyday activities. However, some children may feel uncomfortable or shy during the session. If at any point your child feels uncomfortable, they may stop participating without any consequences."
-                },
-                {
-                    "kind": "text-block",
-                    "text": "While there are no direct benefits to your child, this study may help educators and researchers develop better methods for fostering creativity in children, benefiting future educational approaches."
-                },
-                {
-                    "kind": "text-block",
-                    "text": "All data collected will be kept confidential and stored securely. The video recordings and responses will be used solely for research purposes and will not include any identifying information. Only the research team will have access to this data. Results may be published in scientific journals or presented at conferences, but your child's identity will remain anonymous."
-                },
-                {
-                    "kind": "text-block",
-                    "text": "If you have any questions about this research or your rights as a participant, please feel free to contact us at aminsam@mit.edu."
-                },
-                {
-                    "kind": "checkbox-item",
-                    "text": "I am this child’s parent or legal guardian and I give my permission for the child to participate in this study",
-                    "label": "consent"
-                }
-            ]
-        },
         "video-quality": {
             "kind": "exp-video-config-quality",
             "title": "Webcam setup for the study",
@@ -89,7 +54,7 @@
                             "text": "You will be shown a series of 5 objects and asked to think of new ways to use them."
                         },
                         {
-                            "text": "You will be asked to explain your ideas to the computer, and your responses will be recorded."
+                            "text": "Explain your ideas to the computer by talking into the microphone. Your responses will be recorded."
                         }
                     ]
                 },
@@ -136,29 +101,28 @@
             "frameList": [
                 {
                     "kind": "exp-lookit-video",
-                    "baseDir": "https://raw.githubusercontent.com/aminsamir45/lookit-stimuli-9.85/master/",
                     "video": {
-                        "source": "VIDEO_SOURCE",
+                        "source": "STIMULUS_TYPE",
                         "position": "fill",
                         "loop": false
                     },
                     "backgroundColor": "white",
-                    "autoProceed": true,
-                    "parentTextBlock": {
-                        "text": "If your child needs a break, press the space bar to pause!"
-                    },
+                    "autoProceed": true,          
                     "requiredDuration": 0,
-                    "requireVideoCount": 1,
                     "requireAudioCount": 0,
-                    "doRecording": true
+                    "requireVideoCount": 2,
+                    "doRecording": true,
+                    "frameOffsetAfterPause": 1,
+                    "baseDir": "https://raw.githubusercontent.com/aminsamir45/lookit-stimuli-9.85/master/",
+                    "videoTypes": ["mp4"]
                 }
             ],
             "parameterSets": [
                 {
-                    "VIDEO_SOURCE": "mp4/experimentalstimulus.mp4"
+                    "STIMULUS_TYPE": "experimentalstimulus"
                 },
                 {
-                    "VIDEO_SOURCE": "mp4/controlstimulus.mp4"
+                    "STIMULUS_TYPE": "controlstimulus"
                 }
             ]
         },
@@ -176,7 +140,6 @@
     },
     "sequence": [
         "video-config",
-        "survey-consent",
         "video-quality",
         "instructions",
         "video",
