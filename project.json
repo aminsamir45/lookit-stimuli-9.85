@@ -112,7 +112,7 @@
                     "requireAudioCount": 0,
                     "requireVideoCount": 2,
                     "doRecording": true,
-                    "frameOffsetAfterPause": 1,
+                    "frameOffsetAfterPause": 0,
                     "baseDir": "https://raw.githubusercontent.com/aminsamir45/lookit-stimuli-9.85/master/",
                     "videoTypes": ["mp4"]
                 }
